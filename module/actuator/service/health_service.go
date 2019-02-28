@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	"time"
 
 	"eastsunsoft.com/uranus-service/common/e"
@@ -37,8 +36,13 @@ func (s *HealthService) HealthInfo() (*actuator.HealthRes, *e.UranusErr) {
 			}(indicator)
 		}
 
+		timeoutDuration := 500 * time.Millisecond
+		timeDelay := time.NewTimer(timeoutDuration)
+
 	LOOP:
 		for {
+			timeDelay.Reset(timeoutDuration)
+
 			select {
 			case status := <-statusChan:
 				details[status.Name] = status.HealthStatus
@@ -47,8 +51,7 @@ func (s *HealthService) HealthInfo() (*actuator.HealthRes, *e.UranusErr) {
 				if i >= chainLen {
 					break LOOP
 				}
-			case <-time.After(time.Millisecond * 500):
-				fmt.Println("timeout!!")
+			case <-timeDelay.C:
 				break LOOP
 			}
 		}
