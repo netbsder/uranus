@@ -1,7 +1,7 @@
 package main
 
 import (
-	"eastsunsoft.com/uranus-service/internal/router"
+	"eastsunsoft.com/uranus-service/router"
 	"github.com/gin-gonic/gin"
 )
 

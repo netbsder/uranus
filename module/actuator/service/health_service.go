@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"eastsunsoft.com/uranus-service/common/e"
-	"eastsunsoft.com/uranus-service/internal/actuator"
-	"eastsunsoft.com/uranus-service/internal/actuator/repository"
+	"eastsunsoft.com/uranus-service/module/actuator"
+	"eastsunsoft.com/uranus-service/module/actuator/repository"
 )
 
 type HealthService struct {

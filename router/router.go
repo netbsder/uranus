@@ -1,7 +1,7 @@
 package router
 
 import (
-	"eastsunsoft.com/uranus-service/internal/actuator/transport/restful"
+	"eastsunsoft.com/uranus-service/module/actuator/transport/restful"
 	"github.com/gin-gonic/gin"
 )
 

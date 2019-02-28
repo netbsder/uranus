@@ -3,8 +3,8 @@ package restful
 import (
 	"net/http"
 
-	"eastsunsoft.com/uranus-service/internal/actuator"
-	"eastsunsoft.com/uranus-service/internal/actuator/service"
+	"eastsunsoft.com/uranus-service/module/actuator"
+	"eastsunsoft.com/uranus-service/module/actuator/service"
 	"github.com/gin-gonic/gin"
 )
 
