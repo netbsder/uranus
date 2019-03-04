@@ -3,7 +3,8 @@ package repository
 import (
 	"runtime"
 
-	"eastsunsoft.com/uranus-service/module/actuator"
+	"github.com/netbsder/uranus/module/actuator"
+
 	"github.com/shirou/gopsutil/disk"
 )
 

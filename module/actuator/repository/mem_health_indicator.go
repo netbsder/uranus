@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"eastsunsoft.com/uranus-service/module/actuator"
+	"github.com/netbsder/uranus/module/actuator"
 	"github.com/shirou/gopsutil/mem"
 )
 

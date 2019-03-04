@@ -1,6 +1,6 @@
 package actuator
 
-import "eastsunsoft.com/uranus-service/common/e"
+import "github.com/netbsder/uranus/common/e"
 
 // HealthRes is a common health result, it's type is map[string]interface{}.
 type HealthRes map[string]interface{}
@@ -11,7 +11,7 @@ func NewHealth() *HealthRes {
 
 // HealthService is a interface
 type HealthService interface {
-	HealthInfo() (*HealthRes, *e.UranusErr)
+	HealthInfo(showDetail bool) (*HealthRes, *e.UranusErr)
 }
 
 type HealthIndicatorFunc func() *HealthResDetail

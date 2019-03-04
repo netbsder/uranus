@@ -1,0 +1,30 @@
+app:
+  name: uranus
+  port: 9800
+  # 运行模式，release/debug
+  run-mode: debug
+
+log-level: debug
+info:
+  name: uranus-service
+  version: 1.0.0
+  auth: donny.zhang
+
+management:
+  # 是否启用所有监控管理端点，默认为true
+  endpoints-enabled: true
+
+  # 安全设置
+  security:
+    # http basic auth 认证信息(用户名+":"+"密码")，如为空，则随机生成
+    account: admin
+    password: pass
+
+  # 设置各端点启用/关闭状态，如endpoints-enabled为false，则各端点设置无效
+  endpoint:
+    # health端点，默认为true
+    health: true
+    # info端点，默认为true
+    info: true
+    # metrics端点，默认为false
+    metrics: true

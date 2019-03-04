@@ -1,6 +1,6 @@
-package common
+package uranus
 
-import "eastsunsoft.com/uranus-service/common/e"
+import "github.com/netbsder/uranus/common/e"
 
 type Res struct {
 	Code int         `json:"code"`
