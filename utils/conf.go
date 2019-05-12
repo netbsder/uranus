@@ -1,8 +1,11 @@
 package utils
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
+	"path/filepath"
 	"sync"
 
 	"gopkg.in/yaml.v2"
@@ -62,7 +65,13 @@ func loadAppConfig() {
 	appConfig.Management.Endpoint["info"] = true
 
 	// load config
-	yamlFile, err := ioutil.ReadFile("./conf/application.yaml")
+	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(dir)
+
+	yamlFile, err := ioutil.ReadFile(dir + "/../conf/application.yaml")
 	if err != nil {
 		log.Fatalln("load config error: ", err)
 	}
